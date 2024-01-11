@@ -1,0 +1,23 @@
+.title {
+  text-align: center;
+  margin: 20vh 0 2vh 0;
+  font-size: 50px;
+}
+
+.center {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn-new-task {
+  padding: 15px 70px;
+  font-family: "ShortStack";
+  font-size: 20px;
+  border: var(--new-task-bg-color) 2px solid;
+  background-color: #ae8afc;
+  margin-bottom: 20px;
+  border-radius: var(--b-radius);
+}
