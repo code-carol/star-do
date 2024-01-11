@@ -11,6 +11,7 @@ A simple To-Do app star themed
 - Create a task
 - Check/Uncheck a task
 - Delete a task
+- Not Found page when the url is different than `/home`
 
 ## ⚙️ Installation & Usage
 
