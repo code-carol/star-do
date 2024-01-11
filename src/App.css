@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "ShortStack";
+  src: url("../public/fonts/Short_Stack/ShortStack-Regular.ttf");
+}
+
+* {
+  margin: 0;
+}
+
+:root {
+  --new-task-bg-color: #562eab;
+  --b-radius: 20px;
+}
+
+body {
+  background-color: #ae8afc7e;
+  font-family: "ShortStack";
+}
