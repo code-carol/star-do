@@ -1,0 +1,77 @@
+.container {
+  width: 40vh;
+  padding: 20px 0;
+  border: var(--new-task-bg-color) 2px solid;
+  font-size: 20px;
+  margin: 20px 40px;
+  background-color: #ae8afc5e;
+  border-radius: var(--b-radius);
+}
+
+.label {
+  margin-left: 15px;
+}
+
+/* Customize the checkbox-label container */
+.checkbox-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.check-box {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  height: 25px;
+  width: 25px;
+  border: var(--new-task-bg-color) 2px solid;
+}
+
+.checkbox-label:hover input ~ .check-box {
+  background-color: #5d37a85e;
+}
+
+.checkbox-label input:checked ~ .check-box {
+  background-color: #5d37a85e;
+}
+
+/* Create the check-box/indicator (hidden when not checked) */
+.check-box:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the check-box when checked */
+.checkbox-label input:checked ~ .check-box:after {
+  display: block;
+}
+
+/* Style the check-box/indicator */
+.checkbox-label .check-box:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
