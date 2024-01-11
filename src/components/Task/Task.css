@@ -17,7 +17,7 @@
   display: block;
   position: relative;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -74,4 +74,16 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 400px) {
+  .checkbox-label {
+    font-size: 18px;
+  }
+
+  .check-box {
+    left: 15px;
+    height: 20px;
+    width: 20px;
+  }
 }
