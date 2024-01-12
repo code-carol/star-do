@@ -3,11 +3,21 @@
   z-index: -1;
 }
 
+.hidden-stars {
+  display: absolute;
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .hidden-stars {
+    display: none;
   }
 }
