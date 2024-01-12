@@ -32,6 +32,8 @@ A simple To-Do app star themed
 
 - [Star by @softiie\_](https://picsart.com/i/343808251035211?_branch_match_id=1170471212046291557&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8hMLk4sKtFLLCjQy8nMy9avcPFMCvUz93HMSgIAcknNFiQAAAA%3D)
 
+- [TODO List App - Web Dev Simplified](https://www.youtube.com/watch?v=jBmrduvKl5w)
+
 ## 📚 Lessons Learned
 
 - Create folder structure with TypeScript + React
