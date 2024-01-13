@@ -3,12 +3,15 @@ import "./Button.css";
 interface BtnProps {
   className: string;
   children: string;
+  handleOnClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button = ({ className, children }: BtnProps) => {
+const Button = ({ className, children, handleOnClick }: BtnProps) => {
   return (
     <>
-      <button className={className}>{children}</button>
+      <button className={className} onClick={handleOnClick}>
+        {children}
+      </button>
     </>
   );
 };
