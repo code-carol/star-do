@@ -9,7 +9,7 @@ const Star = ({ left, top }: StarProps) => {
   return (
     <>
       <img
-        src="./public/star.svg"
+        src="./star.svg"
         alt="yellow star"
         className="star"
         width="50px"
