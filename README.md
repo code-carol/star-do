@@ -42,3 +42,5 @@ A simple To-Do app star themed
 - use `interface` to assign the type of the props
 - Create simple rotation animation
 - Create a custom checkbox
+- How to pass onClick events as props with TS
+- How to pass set actions as props with TS
