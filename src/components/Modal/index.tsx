@@ -1,15 +1,27 @@
 import "./Modal.css";
+import Button from "../Button";
 
-const Modal = () => {
+interface ModalProps {
+  closeModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Modal = ({ closeModal }: ModalProps) => {
+  const handleCloseModal = () => {
+    closeModal(false);
+  };
   return (
     <>
-      <div className="modal-bg">
-        <div className="modal-container">
-          <button>x</button>
-          <div className="modal-title"></div>
-          <div className="modal-body"></div>
+      <div className="center">
+        <div className="modal-bg">
+          <Button className="btn-close" handleOnClick={handleCloseModal}>
+            x
+          </Button>
+          <div className="modal-title">new task</div>
+          <div className="modal-body">
+            <input type="text" maxLength={20} />
+          </div>
           <div className="modal-footer"></div>
-          <button>add</button>
+          <Button className="btn-add">add</Button>
         </div>
       </div>
     </>
