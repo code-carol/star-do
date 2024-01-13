@@ -1,0 +1,36 @@
+.modal-bg {
+  background-color: var(--bg-color);
+  color: ghostwhite;
+  padding: 40px 20px;
+  position: fixed;
+  z-index: 1;
+  border-radius: var(--b-radius);
+  margin-top: 55vh;
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: ghostwhite;
+  font-size: 25px;
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  font-family: "ShortStack";
+}
+
+.modal-title {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-body input {
+  font-size: 20px;
+  border: none;
+  border-radius: var(--b-radius);
+  font-family: "ShortStack";
+  padding: 5px 25px;
+  text-align: center;
+}
