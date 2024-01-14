@@ -44,3 +44,4 @@ A simple To-Do app star themed
 - Create a custom checkbox
 - How to pass onClick events as props with TS
 - How to pass set actions as props with TS
+- Create a Types File
