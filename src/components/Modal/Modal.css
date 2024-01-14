@@ -1,7 +1,7 @@
 .modal-bg {
   background-color: var(--bg-color);
   color: ghostwhite;
-  padding: 40px 20px;
+  padding: 30px 20px;
   position: fixed;
   z-index: 1;
   border-radius: var(--b-radius);
@@ -33,4 +33,14 @@
   font-family: "ShortStack";
   padding: 5px 25px;
   text-align: center;
+}
+
+.btn-add {
+  padding: 10px 40px;
+  font-family: "ShortStack";
+  font-size: 20px;
+  border: var(--bg-color) 2px solid;
+  background-color: #ae8afc;
+  border-radius: var(--b-radius);
+  margin-top: 20px;
 }
