@@ -47,6 +47,7 @@ const Modal = ({ closeModal, addTask }: ModalProps) => {
                 value={inputValue}
                 onChange={onChangeValue}
                 autoFocus
+                required
               />
             </div>
             <div className="modal-footer"></div>
