@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./NotFound.css";
 import Star from "../../components/Star";
+import Footer from "../../components/Footer";
 
 const NotFound = () => {
   return (
@@ -35,6 +36,7 @@ const NotFound = () => {
         <Star left="94%" top="70%" />
         <Star left="1%" top="93%" />
       </div>
+      <Footer />
     </>
   );
 };

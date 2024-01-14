@@ -3,6 +3,7 @@ import Star from "../../components/Star";
 import Button from "../../components/Button";
 import Modal from "../../components/Modal";
 import TaskList from "../../components/TaskList";
+import Footer from "../../components/Footer";
 import { TaskType } from "../../types";
 import { v4 as uuidV4 } from "uuid";
 
@@ -52,6 +53,7 @@ const Home = () => {
       <Star left="30%" top="60%" />
       <Star left="75%" top="80%" />
       <Star left="20%" top="90%" />
+      <Footer />
     </>
   );
 };
