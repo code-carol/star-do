@@ -43,6 +43,7 @@ const Modal = ({ closeModal, addTask }: ModalProps) => {
             <div className="modal-body">
               <input
                 type="text"
+                name="taskTitle"
                 maxLength={20}
                 value={inputValue}
                 onChange={onChangeValue}
