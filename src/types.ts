@@ -1,8 +1,9 @@
 export type TaskType = {
   id: string;
   title: string;
-  completed: boolean;
   createdAt: Date;
+  completed: boolean;
+  completedAt: Date | null;
 };
 
 export type FormEvent = React.FormEvent<HTMLFormElement>;

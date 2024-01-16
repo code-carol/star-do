@@ -21,8 +21,9 @@ const Home = () => {
     const newTask = {
       id: uuidV4(),
       title: inputValue,
-      completed: false,
       createdAt: new Date(),
+      completed: false,
+      completedAt: null,
     };
 
     setTasks([...tasks, newTask]);
@@ -53,7 +54,9 @@ const Home = () => {
           handleCompleteTask={(id) => {
             setTasks((tasks) =>
               tasks.map((task) =>
-                task.id === id ? { ...task, completed: true } : task
+                task.id === id
+                  ? { ...task, completed: true, completedAt: new Date() }
+                  : task
               )
             );
           }}
