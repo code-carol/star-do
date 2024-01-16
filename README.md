@@ -13,6 +13,12 @@ A simple To-Do app star themed
 - Delete a task
 - Not Found page
 
+## Future Features
+
+- Create login/register
+- Store how many tasks completed in the day
+- Store tasks by day
+
 ## ⚙️ Installation & Usage
 
 - Clone or download the repo
