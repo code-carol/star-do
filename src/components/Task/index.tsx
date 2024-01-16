@@ -4,20 +4,25 @@ import Button from "../Button";
 
 interface TaskProps {
   children: string;
-  onDelete: (id: string) => void;
   id: string;
+  onDelete: (id: string) => void;
+  onComplete: (id: string) => void;
 }
 
-const Task = ({ children, onDelete, id }: TaskProps) => {
+const Task = ({ children, id, onDelete, onComplete }: TaskProps) => {
   const handleDelete = () => {
     onDelete(id);
+  };
+
+  const handleComplete = () => {
+    onComplete(id);
   };
   return (
     <>
       <li>
         <div className="container">
           <label className="checkbox-label">
-            <input type="checkbox" value="task" />
+            <input type="checkbox" value="task" onChange={handleComplete} />
             <span className="check-box"></span>
             <span className="label">{children}</span>
             <Button

@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 import { TaskType } from "../../types";
 import { v4 as uuidV4 } from "uuid";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -25,7 +25,12 @@ const Home = () => {
     };
 
     setTasks([...tasks, newTask]);
+    console.log(newTask);
   };
+
+  useEffect(() => {
+    console.log("Updated tasks:", tasks);
+  }, [tasks]);
 
   return (
     <>
@@ -43,6 +48,13 @@ const Home = () => {
           taskItems={tasks}
           handleDeleteTask={(id) => {
             setTasks(tasks.filter((task) => task.id !== id));
+          }}
+          handleCompleteTask={(id) => {
+            setTasks((tasks) =>
+              tasks.map((task) =>
+                task.id === id ? { ...task, completed: true } : task
+              )
+            );
           }}
         />
       </div>

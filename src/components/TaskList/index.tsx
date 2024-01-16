@@ -6,14 +6,24 @@ import Task from "../Task";
 interface TaskListProps {
   taskItems: TaskType[];
   handleDeleteTask: (id: string) => void;
+  handleCompleteTask: (id: string) => void;
 }
 
-const TaskList = ({ taskItems, handleDeleteTask }: TaskListProps) => {
+const TaskList = ({
+  taskItems,
+  handleDeleteTask,
+  handleCompleteTask,
+}: TaskListProps) => {
   return (
     <>
       <ul className="ul-list">
         {taskItems.map((task) => (
-          <Task key={task.id} onDelete={handleDeleteTask} id={task.id}>
+          <Task
+            key={task.id}
+            id={task.id}
+            onDelete={handleDeleteTask}
+            onComplete={handleCompleteTask}
+          >
             {task.title}
           </Task>
         ))}
