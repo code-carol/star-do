@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 import { TaskType } from "../../types";
 import { v4 as uuidV4 } from "uuid";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -27,6 +27,7 @@ const Home = () => {
     };
 
     setTasks([...tasks, newTask]);
+    saveTasks();
     // console.log(newTask);
   };
 
@@ -47,6 +48,28 @@ const Home = () => {
       )
     );
   };
+
+  const saveTasks = () => {
+    localStorage.setItem("TASKS", JSON.stringify(tasks));
+  };
+
+  useEffect(() => {
+    saveTasks();
+  }, [tasks]);
+
+  const loadTasks = (): TaskType[] => {
+    const taskJSON = localStorage.getItem("TASKS");
+    if (taskJSON === null) return [];
+    return JSON.parse(taskJSON);
+  };
+
+  useEffect(() => {
+    const loadedTasks = loadTasks();
+    if (loadedTasks.length > 0) {
+      setTasks(loadedTasks);
+    }
+  }, []);
+
   return (
     <>
       {openModal && <Modal closeModal={setOpenModal} addTask={handleAddTask} />}
