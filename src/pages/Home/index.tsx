@@ -22,6 +22,7 @@ const Home = () => {
       id: uuidV4(),
       title: inputValue,
       completed: false,
+      createdAt: new Date(),
     };
 
     setTasks([...tasks, newTask]);
