@@ -11,7 +11,30 @@ import { useState, useEffect } from "react";
 
 const Home = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
-  const [tasks, setTasks] = useState<TaskType[]>([]);
+  const [tasks, setTasks] = useState<TaskType[]>(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+
+  // useEffect(() => {
+  //   try {
+  //     setTasks(JSON.parse(localStorage.getItem("TASKS") || ""));
+  //   } catch (error) {
+  //     console.error("Error loading tasks from localStorage:", error);
+  //   }
+  // }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    } catch (error) {
+      console.error("Error saving tasks to localStorage:", error);
+    }
+  }, [tasks]);
+
+  // useEffect(() => {
+  //   console.log("Updated tasks:", tasks);
+  // }, [tasks]);
 
   const handleOpenModal = () => {
     setOpenModal(true);
@@ -27,13 +50,8 @@ const Home = () => {
     };
 
     setTasks([...tasks, newTask]);
-    saveTasks();
     // console.log(newTask);
   };
-
-  // useEffect(() => {
-  //   console.log("Updated tasks:", tasks);
-  // }, [tasks]);
 
   const handleDeleteId = (id: string) => {
     setTasks(tasks.filter((task) => task.id !== id));
@@ -43,32 +61,15 @@ const Home = () => {
     setTasks((tasks) =>
       tasks.map((task) =>
         task.id === id
-          ? { ...task, completed: true, completedAt: new Date() }
+          ? {
+              ...task,
+              completed: !task.completed, // Toggle the completed status
+              completedAt: task.completed ? null : new Date(), // Set or unset the completedAt date
+            }
           : task
       )
     );
   };
-
-  const saveTasks = () => {
-    localStorage.setItem("TASKS", JSON.stringify(tasks));
-  };
-
-  useEffect(() => {
-    saveTasks();
-  }, [tasks]);
-
-  const loadTasks = (): TaskType[] => {
-    const taskJSON = localStorage.getItem("TASKS");
-    if (taskJSON === null) return [];
-    return JSON.parse(taskJSON);
-  };
-
-  useEffect(() => {
-    const loadedTasks = loadTasks();
-    if (loadedTasks.length > 0) {
-      setTasks(loadedTasks);
-    }
-  }, []);
 
   return (
     <>

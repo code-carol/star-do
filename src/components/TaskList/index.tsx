@@ -17,16 +17,20 @@ const TaskList = ({
   return (
     <>
       <ul className="ul-list">
-        {taskItems.map((task) => (
-          <Task
-            key={task.id}
-            id={task.id}
-            onDelete={handleDeleteTask}
-            onComplete={handleCompleteTask}
-          >
-            {task.title}
-          </Task>
-        ))}
+        {taskItems.length === 0 ? (
+          <p>No tasks available</p>
+        ) : (
+          taskItems.map((task) => (
+            <Task
+              key={task.id}
+              id={task.id}
+              onDelete={handleDeleteTask}
+              onComplete={handleCompleteTask}
+            >
+              {task.title}
+            </Task>
+          ))
+        )}
       </ul>
     </>
   );
