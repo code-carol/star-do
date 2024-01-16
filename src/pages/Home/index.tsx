@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 import { TaskType } from "../../types";
 import { v4 as uuidV4 } from "uuid";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Home = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -27,13 +27,26 @@ const Home = () => {
     };
 
     setTasks([...tasks, newTask]);
-    console.log(newTask);
+    // console.log(newTask);
   };
 
-  useEffect(() => {
-    console.log("Updated tasks:", tasks);
-  }, [tasks]);
+  // useEffect(() => {
+  //   console.log("Updated tasks:", tasks);
+  // }, [tasks]);
 
+  const handleDeleteId = (id: string) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  const handleCompleteId = (id: string) => {
+    setTasks((tasks) =>
+      tasks.map((task) =>
+        task.id === id
+          ? { ...task, completed: true, completedAt: new Date() }
+          : task
+      )
+    );
+  };
   return (
     <>
       {openModal && <Modal closeModal={setOpenModal} addTask={handleAddTask} />}
@@ -48,18 +61,8 @@ const Home = () => {
         </Button>
         <TaskList
           taskItems={tasks}
-          handleDeleteTask={(id) => {
-            setTasks(tasks.filter((task) => task.id !== id));
-          }}
-          handleCompleteTask={(id) => {
-            setTasks((tasks) =>
-              tasks.map((task) =>
-                task.id === id
-                  ? { ...task, completed: true, completedAt: new Date() }
-                  : task
-              )
-            );
-          }}
+          handleDeleteTask={handleDeleteId}
+          handleCompleteTask={handleCompleteId}
         />
       </div>
       <Star left="5%" top="1%" />
