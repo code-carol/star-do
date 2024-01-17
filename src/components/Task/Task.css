@@ -63,7 +63,7 @@
   display: block;
 }
 
-.checkbox-label input:checked ~ .label {
+.checkbox-label input:checked ~ .completed-task {
   text-decoration: line-through;
 }
 

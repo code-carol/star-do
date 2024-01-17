@@ -26,6 +26,7 @@ const TaskList = ({
               id={task.id}
               onDelete={handleDeleteTask}
               onComplete={handleCompleteTask}
+              completed={task.completed}
             >
               {task.title}
             </Task>
