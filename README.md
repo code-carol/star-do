@@ -34,12 +34,6 @@ A simple To-Do app star themed
 
 ## 👀 Demo
 
-## ✨ Inspiration
-
-- [Star by @softiie\_](https://picsart.com/i/343808251035211?_branch_match_id=1170471212046291557&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8hMLk4sKtFLLCjQy8nMy9avcPFMCvUz93HMSgIAcknNFiQAAAA%3D)
-
-- [TODO List App - Web Dev Simplified](https://www.youtube.com/watch?v=jBmrduvKl5w)
-
 ## 📚 Lessons Learned
 
 - Create folder structure with TypeScript + React
@@ -52,3 +46,9 @@ A simple To-Do app star themed
 - How to pass set actions as props with TS
 - Create a Types File
 - Store on LocalStorage
+
+## ✨ Inspiration
+
+- [Star by @softiie\_](https://picsart.com/i/343808251035211?_branch_match_id=1170471212046291557&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8hMLk4sKtFLLCjQy8nMy9avcPFMCvUz93HMSgIAcknNFiQAAAA%3D)
+
+- [TODO List App - Web Dev Simplified](https://www.youtube.com/watch?v=jBmrduvKl5w)
