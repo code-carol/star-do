@@ -13,3 +13,11 @@
   margin-bottom: 20px;
   border-radius: var(--b-radius);
 }
+
+@media only screen and (max-width: 800px) {
+  .title {
+    text-align: center;
+    margin: 10vh 0 2vh 0;
+    font-size: 50px;
+  }
+}
