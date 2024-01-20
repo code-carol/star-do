@@ -41,7 +41,7 @@ const Home = () => {
       completedAt: null,
     };
 
-    setTasks([...tasks, newTask]);
+    setTasks([newTask, ...tasks]);
     // console.log(newTask);
   };
 
