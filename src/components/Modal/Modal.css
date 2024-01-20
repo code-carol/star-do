@@ -5,7 +5,7 @@
   position: fixed;
   z-index: 1;
   border-radius: var(--b-radius);
-  margin-top: 55vh;
+  margin-top: 50vh;
 }
 
 .btn-close {

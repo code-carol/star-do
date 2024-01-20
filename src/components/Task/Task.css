@@ -1,5 +1,5 @@
 .container {
-  width: 40vh;
+  width: 45vh;
   padding: 20px 0;
   border: var(--bg-color) 2px solid;
   font-size: 20px;
@@ -16,7 +16,7 @@
 .checkbox-label {
   display: block;
   position: relative;
-  font-size: 20px;
+  font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -36,11 +36,11 @@
 .check-box {
   position: absolute;
   top: 0;
-  left: 30px;
-  height: 25px;
-  width: 25px;
   border: var(--bg-color) 2px solid;
   cursor: pointer;
+  left: 20px;
+  height: 15px;
+  width: 15px;
 }
 
 .checkbox-label:hover input ~ .check-box {
@@ -69,8 +69,6 @@
 
 /* Style the check-box/indicator */
 .checkbox-label .check-box:after {
-  left: 9px;
-  top: 5px;
   width: 5px;
   height: 10px;
   border: solid black;
@@ -78,44 +76,17 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+  left: 4px;
+  top: 1px;
 }
 
 .btn-delete {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 25px;
   font-family: "ShortStack";
   position: absolute;
+  font-size: 20px;
   bottom: 0px;
-  right: 15px;
-}
-
-@media only screen and (max-width: 400px) {
-  .container {
-    width: 45vh;
-    padding: 20px 0;
-    border: var(--bg-color) 2px solid;
-  }
-
-  .checkbox-label {
-    font-size: 18px;
-  }
-
-  .check-box {
-    left: 20px;
-    height: 15px;
-    width: 15px;
-  }
-
-  .checkbox-label .check-box:after {
-    left: 4px;
-    top: 1px;
-  }
-
-  .btn-delete {
-    font-size: 20px;
-    bottom: 0px;
-    right: 10px;
-  }
+  right: 10px;
 }
