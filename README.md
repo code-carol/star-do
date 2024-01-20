@@ -35,6 +35,9 @@ A simple To-Do app star themed
 
 ## 👀 Demo
 
+https://github.com/code-carol/star-do/assets/88780435/7635f39b-3191-498c-bd79-f67b22048a2a
+
+
 ## 📚 Lessons Learned
 
 - Create folder structure with TypeScript + React
