@@ -16,14 +16,6 @@ const Home = () => {
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
 
-  // useEffect(() => {
-  //   try {
-  //     setTasks(JSON.parse(localStorage.getItem("TASKS") || ""));
-  //   } catch (error) {
-  //     console.error("Error loading tasks from localStorage:", error);
-  //   }
-  // }, []);
-
   useEffect(() => {
     try {
       localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -58,17 +50,30 @@ const Home = () => {
   };
 
   const handleCompleteId = (id: string) => {
-    setTasks((tasks) =>
-      tasks.map((task) =>
-        task.id === id
-          ? {
-              ...task,
-              completed: !task.completed, // Toggle the completed status
-              completedAt: task.completed ? null : new Date(), // Set or unset the completedAt date
-            }
-          : task
-      )
-    );
+    setTasks((tasks) => {
+      const taskToUpdate = tasks.find((task) => task.id === id);
+
+      if (!taskToUpdate) {
+        return tasks;
+      }
+
+      const updatedTask = {
+        ...taskToUpdate,
+        completed: !taskToUpdate.completed,
+        completedAt: taskToUpdate.completed ? null : new Date(),
+      };
+
+      const filteredTasks = tasks.filter((task) => task.id !== id);
+
+      // Add the updated task to the start or the end of the array
+      if (updatedTask.completed) {
+        // If the task is now completed, move it to the end
+        return [...filteredTasks, updatedTask];
+      } else {
+        // If the task is now incomplete, move it to the start
+        return [updatedTask, ...filteredTasks];
+      }
+    });
   };
 
   return (
