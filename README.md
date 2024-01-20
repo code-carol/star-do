@@ -18,7 +18,7 @@ A simple To-Do app star themed
 - Create login/register
 - Store how many tasks completed in the day
 - Store tasks by day
-- Add test with `vitest` and `cypress`
+- Add tests with `vitest` and `cypress`
 
 ## ⚙️ Installation & Usage
 
